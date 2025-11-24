@@ -4,15 +4,23 @@ import Collections from '../components/Collections';
 import BestSeller from '../components/BestSeller';
 import OurPolicy from '../components/OurPolicy';
 import NewsLetter from '../components/NewsLetter';
+import FragranceJourney from '../components/FragranceJourney';
+import Testimonials from '../components/Testimonials';
+import SummerOffer from '../components/SummerOffer';
+import InstagramGallery from '../components/InstagramGallery';
 
 const Home = () => {
   return (
     <>
         <Hero />
-        <Collections />
-        <BestSeller />
         <OurPolicy />
+        <Collections />
+        <FragranceJourney />
+        <BestSeller />
+        <Testimonials />
+        <SummerOffer />
         <NewsLetter />
+        <InstagramGallery />
     </>
   )
 }
