@@ -2,7 +2,6 @@
 
 @import "tailwindcss";
 
-/* Font Family Variables */
 :root {
   --font-heading: 'Josefin Sans', sans-serif;
   --font-body: 'Montserrat', sans-serif;
@@ -25,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 .font-body {
   font-family: var(--font-body);
 }
-
 
 /* Hero Section Animations */
 @keyframes fadeInLeft {
