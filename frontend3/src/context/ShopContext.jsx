@@ -167,7 +167,7 @@ const ShopContextProvider = (props) => {
         try {
             // Sending request to get user cart
             const response = await axios.post(`${backendUrl}/api/cart/get`, {}, {headers: {token: userToken}});
-            console.log(response.data);
+            // console.log(response.data);
             // Setting cart items
             if (response.data.success) {
                 // Setting cart items
@@ -177,7 +177,7 @@ const ShopContextProvider = (props) => {
             }
         } catch (error) {
             console.log(error);
-            toast.error(error.message);
+            toast.error("Frontend Error");
         }
     }
 
