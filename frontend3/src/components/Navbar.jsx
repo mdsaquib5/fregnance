@@ -20,7 +20,7 @@ const Navbar = () => {
         toast.success("User Logout successfully");
     }
 
-    console.log("token is", token);
+    // console.log("token is", token);
 
     return (
         <>

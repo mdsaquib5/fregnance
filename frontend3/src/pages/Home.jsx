@@ -7,7 +7,7 @@ import NewsLetter from '../components/NewsLetter';
 import FragranceJourney from '../components/FragranceJourney';
 import Testimonials from '../components/Testimonials';
 import SummerOffer from '../components/SummerOffer';
-import InstagramGallery from '../components/InstagramGallery';
+import InstaPost from '../components/InstaPost';
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
         <Testimonials />
         <SummerOffer />
         <NewsLetter />
-        <InstagramGallery />
+        <InstaPost />
     </>
   )
 }

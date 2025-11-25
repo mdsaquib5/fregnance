@@ -46,7 +46,7 @@ const Hero = () => {
             description: 'Experience the art of fine fragrance with our bestselling collection',
             buttonText: 'Explore Collection',
             image: assets.hero_img, // Replace with your actual image
-            link: '/collection?type=Bestsellers'
+            link: '/collection'
         },
         {
             id: 3,
@@ -54,8 +54,8 @@ const Hero = () => {
             title: 'Luxury Meets Sophistication',
             description: 'Indulge in exclusive fragrances designed to leave a lasting impression',
             buttonText: 'Discover More',
-            image: assets.hero_img, // Replace with your actual image
-            link: '/collection?type=Limited Edition'
+            image: '/images/hero1.jpg', // Replace with your actual image
+            link: '/collection'
         }
     ];
 

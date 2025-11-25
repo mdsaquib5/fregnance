@@ -18,10 +18,10 @@ const BestSeller = () => {
 
     return (
         <>
-            <div className='py-30 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-pink-50/30'>
+            <div className='py-30 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-pink-50/70'>
                 <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                     {/* Title Section */}
-                    <div className='mb-12'>
+                    <div className='mb-16'>
                         <Title
                             text1="BEST"
                             text2="SELLERS"

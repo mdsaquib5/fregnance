@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slick-dots li.slick-active div {
-    background-color: white !important;
+    background-color: #f6339a !important;
     transform: scale(1.3);
 }
 
@@ -88,6 +88,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .slick-next {
     right: 20px;
+}
+
+/* Custom Background Images */
+.bg-fregnance {
+    background-image: url('/images/fregnanceBg.jpg');
 }
 
 /* Responsive adjustments */
