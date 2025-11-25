@@ -9,7 +9,7 @@ const Navbar = () => {
     const [visible, setVisible] = useState(false);
     const [showMenMenu, setShowMenMenu] = useState(false);
     const [showWomenMenu, setShowWomenMenu] = useState(false);
-    const [showCollectionMenu, setShowCollectionMenu] = useState(false);
+    // const [showCollectionMenu, setShowCollectionMenu] = useState(false);
     const { setShowSearch, getCartCount, setToken, setCartItems, navigate, token } = useContext(ShopContext);
 
     const logout = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
                         <ul className='hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-gray-800 font-body'>
                             <NavLink
                                 to={'/'}
-                                className={({ isActive }) => `relative py-2 transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
+                                className={({ isActive }) => `uppercase relative py-2 transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
                             >
                                 <span>HOME</span>
                                 <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-pink-600 transition-all duration-300 group-hover:w-full'></span>
@@ -58,7 +58,7 @@ const Navbar = () => {
                                 onMouseEnter={() => setShowMenMenu(true)}
                                 onMouseLeave={() => setShowMenMenu(false)}
                             >
-                                <button className='py-2 transition-colors duration-200 hover:text-pink-600 flex items-center gap-1'>
+                                <button className='py-2 transition-colors uppercase duration-200 hover:text-pink-600 flex items-center gap-1'>
                                     MEN
                                     <ChevronDown className='w-4 h-4 transition-transform group-hover:rotate-180' />
                                 </button>
@@ -66,20 +66,17 @@ const Navbar = () => {
                                     <div className='absolute left-0 top-full pt-2 w-64'>
                                         <div className='bg-white rounded-lg shadow-xl border border-gray-100 py-4 px-2'>
                                             <div className='space-y-1'>
-                                                <Link to='/collection?category=Men&type=Eau de Parfum' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Eau de Parfum
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 1
                                                 </Link>
-                                                <Link to='/collection?category=Men&type=Eau de Toilette' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Eau de Toilette
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 2
                                                 </Link>
-                                                <Link to='/collection?category=Men&type=Cologne' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Cologne
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 3
                                                 </Link>
-                                                <Link to='/collection?category=Men&type=Gift Sets' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Gift Sets
-                                                </Link>
-                                                <Link to='/collection?category=Men' className='block px-4 py-2 text-sm font-semibold text-pink-600 hover:bg-pink-50 rounded transition-colors mt-2 border-t pt-3'>
-                                                    View All Men's →
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 4
                                                 </Link>
                                             </div>
                                         </div>
@@ -93,7 +90,7 @@ const Navbar = () => {
                                 onMouseEnter={() => setShowWomenMenu(true)}
                                 onMouseLeave={() => setShowWomenMenu(false)}
                             >
-                                <button className='py-2 transition-colors duration-200 hover:text-pink-600 flex items-center gap-1'>
+                                <button className='py-2 transition-colors uppercase duration-200 hover:text-pink-600 flex items-center gap-1'>
                                     WOMEN
                                     <ChevronDown className='w-4 h-4 transition-transform group-hover:rotate-180' />
                                 </button>
@@ -101,20 +98,17 @@ const Navbar = () => {
                                     <div className='absolute left-0 top-full pt-2 w-64'>
                                         <div className='bg-white rounded-lg shadow-xl border border-gray-100 py-4 px-2'>
                                             <div className='space-y-1'>
-                                                <Link to='/collection?category=Women&type=Eau de Parfum' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Eau de Parfum
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 1
                                                 </Link>
-                                                <Link to='/collection?category=Women&type=Eau de Toilette' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Eau de Toilette
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 2
                                                 </Link>
-                                                <Link to='/collection?category=Women&type=Body Mist' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Body Mist
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 3
                                                 </Link>
-                                                <Link to='/collection?category=Women&type=Gift Sets' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                    Gift Sets
-                                                </Link>
-                                                <Link to='/collection?category=Women' className='block px-4 py-2 text-sm font-semibold text-pink-600 hover:bg-pink-50 rounded transition-colors mt-2 border-t pt-3'>
-                                                    View All Women's →
+                                                <Link to='/collection' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
+                                                    Perfume 4
                                                 </Link>
                                             </div>
                                         </div>
@@ -123,62 +117,23 @@ const Navbar = () => {
                             </li>
 
                             {/* Collection Mega Menu */}
-                            <li
-                                className='relative group'
-                                onMouseEnter={() => setShowCollectionMenu(true)}
-                                onMouseLeave={() => setShowCollectionMenu(false)}
+                           <NavLink
+                                to={'/collection'}
+                                className={({ isActive }) => `py-2 uppercase transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
                             >
-                                <button className='py-2 transition-colors duration-200 hover:text-pink-600 flex items-center gap-1'>
-                                    COLLECTION
-                                    <ChevronDown className='w-4 h-4 transition-transform group-hover:rotate-180' />
-                                </button>
-                                {showCollectionMenu && (
-                                    <div className='absolute left-0 top-full pt-2 w-72'>
-                                        <div className='bg-white rounded-lg shadow-xl border border-gray-100 py-4 px-2'>
-                                            <div className='grid grid-cols-2 gap-2'>
-                                                <div>
-                                                    <p className='px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider'>By Type</p>
-                                                    <Link to='/collection?type=Bestsellers' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        Bestsellers
-                                                    </Link>
-                                                    <Link to='/collection?type=New Arrivals' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        New Arrivals
-                                                    </Link>
-                                                    <Link to='/collection?type=Limited Edition' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        Limited Edition
-                                                    </Link>
-                                                </div>
-                                                <div>
-                                                    <p className='px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider'>By Scent</p>
-                                                    <Link to='/collection?scent=Floral' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        Floral
-                                                    </Link>
-                                                    <Link to='/collection?scent=Woody' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        Woody
-                                                    </Link>
-                                                    <Link to='/collection?scent=Fresh' className='block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded transition-colors'>
-                                                        Fresh
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <Link to='/collection' className='block px-4 py-2 text-sm font-semibold text-pink-600 hover:bg-pink-50 rounded transition-colors mt-2 border-t mx-2 pt-3'>
-                                                View All Products →
-                                            </Link>
-                                        </div>
-                                    </div>
-                                )}
-                            </li>
+                                Collection
+                            </NavLink>
 
                             <NavLink
                                 to={'/about'}
-                                className={({ isActive }) => `py-2 transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
+                                className={({ isActive }) => `py-2 uppercase transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
                             >
                                 ABOUT
                             </NavLink>
 
                             <NavLink
                                 to={'/contact'}
-                                className={({ isActive }) => `py-2 transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
+                                className={({ isActive }) => `py-2 uppercase transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
                             >
                                 CONTACT
                             </NavLink>

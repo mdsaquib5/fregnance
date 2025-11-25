@@ -11,7 +11,7 @@ const InstaPost = () => {
     ];
 
     return (
-        <div className='w-full mt-12 sm:mt-16 lg:mt-20'>
+        <div className='w-full'>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'>
                 {images.map((img, index) => (
                     <div 

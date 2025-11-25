@@ -1,4 +1,7 @@
+import {Link} from 'react-router-dom';
+
 const SummerOffer = () => {
+    
     const bottles = [
         { img: '/images/bottle1.jpg', alt: 'Perfume bottle 1', rotate: '-rotate-12' },
         { img: '/images/bottle2.jpg', alt: 'Perfume bottle 2', },
@@ -30,9 +33,9 @@ const SummerOffer = () => {
                         </p>
 
                         {/* CTA Button */}
-                        <button className='w-full sm:w-auto bg-transparent border-2 border-pink-500 text-pink-600 hover:bg-pink-500 hover:text-white font-body font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 uppercase text-xs sm:text-sm tracking-wide'>
+                        <Link to='/collection' className='w-full sm:w-auto bg-transparent border-2 border-pink-500 text-pink-600 hover:bg-pink-500 hover:text-white font-body font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 uppercase text-xs sm:text-sm tracking-wide'>
                             Shop Now
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Right Image Section */}

@@ -21,8 +21,8 @@ const ProductItem = ({ item }) => {
 
                         {/* Bestseller Badge */}
                         {item.bestseller && (
-                            <div className='absolute top-3 left-3 bg-white text-pink-600 text-xs font-semibold px-3 py-1 rounded font-body'>
-                                BESTSELLER
+                            <div className='absolute top-3 left-3 bg-white text-pink-600 text-xs font-semibold px-3 py-1 lowercase rounded font-body'>
+                                Bestseller
                             </div>
                         )}
                     </div>

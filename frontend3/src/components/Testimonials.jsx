@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import Title from './Title';
 
 const Testimonials = () => {
+    
     const testimonials = [
         {
             id: 1,

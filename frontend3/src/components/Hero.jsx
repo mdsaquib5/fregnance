@@ -59,30 +59,6 @@ const Hero = () => {
         }
     ];
 
-    // Services data
-    const services = [
-        {
-            icon: <Truck className='w-10 h-10 sm:w-12 sm:h-12' />,
-            title: 'Free Shipping',
-            description: 'On orders over $50'
-        },
-        {
-            icon: <Shield className='w-10 h-10 sm:w-12 sm:h-12' />,
-            title: '100% Authentic',
-            description: 'Guaranteed genuine products'
-        },
-        {
-            icon: <Award className='w-10 h-10 sm:w-12 sm:h-12' />,
-            title: 'Premium Quality',
-            description: 'Luxury fragrances only'
-        },
-        {
-            icon: <Headphones className='w-10 h-10 sm:w-12 sm:h-12' />,
-            title: '24/7 Support',
-            description: 'We are here to help'
-        }
-    ];
-
     return (
         <>
             {/* Hero Slider Section */}

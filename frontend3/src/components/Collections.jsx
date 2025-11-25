@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from './Title';
 import ProductItem from './ProductItem';
+import { Link } from 'react-router-dom';
 
 const Collections = () => {
 
@@ -9,7 +10,7 @@ const Collections = () => {
     const [latestProducts, setLatestProducts] = useState([]);
 
     useEffect(() => {
-        setLatestProducts(products.slice(0, 10));
+        setLatestProducts(products.slice(0, 4));
     }, [products])
 
     return (
@@ -36,7 +37,7 @@ const Collections = () => {
 
                     {/* View All Button */}
                     <div className='text-center mt-12 sm:mt-16'>
-                        <button className='inline-flex items-center gap-2 bg-white hover:bg-pink-600 text-gray-800 hover:text-white font-body font-medium px-8 py-3 rounded-full border-2 border-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group'>
+                        <Link to='/collection' className='inline-flex items-center gap-2 bg-white hover:bg-pink-600 text-gray-800 hover:text-white font-body font-medium px-8 py-3 rounded-full border-2 border-pink-600 transition-all duration-300 hover:scale-105 hover:shadow-lg group'>
                             <span className='text-sm sm:text-base tracking-wide uppercase'>
                                 View All Collections
                             </span>
@@ -48,7 +49,7 @@ const Collections = () => {
                             >
                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M17 8l4 4m0 0l-4 4m4-4H3'></path>
                             </svg>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
