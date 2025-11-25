@@ -351,7 +351,7 @@ const PlaceOrder = () => {
                             <button
                                 type='submit'
                                 disabled={loading}
-                                className='w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-body font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2'
+                                className='w-full bg-gradient-to-r cursor-pointer from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-body font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2'
                             >
                                 {loading ? (
                                     <>

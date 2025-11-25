@@ -167,7 +167,7 @@ const Login = () => {
                             <button
                                 type='button'
                                 onClick={() => setCurrentState(currentState === 'Login' ? 'Sign Up' : 'Login')}
-                                className='text-pink-600 hover:text-pink-700 font-semibold font-body transition-colors ml-auto'
+                                className='text-pink-600 hover:text-pink-700 font-semibold cursor-pointer font-body transition-colors ml-auto'
                             >
                                 {currentState === 'Login' ? 'Create Account' : 'Login Here'}
                             </button>
@@ -176,7 +176,7 @@ const Login = () => {
                         {/* Submit Button */}
                         <button
                             type='submit'
-                            className='w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-body font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2'
+                            className='w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white font-body font-semibold py-4 rounded-xl transition-all cursor-pointer duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2'
                         >
                             {currentState === 'Login' ? 'Sign In' : 'Create Account'}
                             <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -199,7 +199,7 @@ const Login = () => {
                     <div className='grid grid-cols-2 gap-3'>
                         <button
                             type='button'
-                            className='flex items-center justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-body text-sm font-semibold text-gray-700'
+                            className='flex items-center cursor-pointer justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-body text-sm font-semibold text-gray-700'
                         >
                             <svg className='w-5 h-5' viewBox='0 0 24 24'>
                                 <path fill='#4285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/>
@@ -211,7 +211,7 @@ const Login = () => {
                         </button>
                         <button
                             type='button'
-                            className='flex items-center justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-body text-sm font-semibold text-gray-700'
+                            className='flex items-center cursor-pointer justify-center gap-2 px-4 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-body text-sm font-semibold text-gray-700'
                         >
                             <svg className='w-5 h-5' fill='#1877F2' viewBox='0 0 24 24'>
                                 <path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/>

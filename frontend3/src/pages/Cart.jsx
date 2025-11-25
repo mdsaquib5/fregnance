@@ -128,7 +128,7 @@ const Cart = () => {
                                                     <div className='flex items-center gap-2'>
                                                         <button
                                                             onClick={() => updateQuantity(item._id, item.size, Math.max(0, item.quantity - 1))}
-                                                            className='w-8 h-8 flex items-center justify-center rounded-lg border-2 border-gray-300 hover:border-pink-500 hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-all duration-300'
+                                                            className='w-8 h-8 cursor-pointer flex items-center justify-center rounded-lg border-2 border-gray-300 hover:border-pink-500 hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-all duration-300'
                                                         >
                                                             <Minus className='w-4 h-4' />
                                                         </button>
@@ -139,7 +139,7 @@ const Cart = () => {
                                                         
                                                         <button
                                                             onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)}
-                                                            className='w-8 h-8 flex items-center justify-center rounded-lg border-2 border-gray-300 hover:border-pink-500 hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-all duration-300'
+                                                            className='w-8 h-8 flex cursor-pointer items-center justify-center rounded-lg border-2 border-gray-300 hover:border-pink-500 hover:bg-pink-50 text-gray-600 hover:text-pink-600 transition-all duration-300'
                                                         >
                                                             <Plus className='w-4 h-4' />
                                                         </button>
@@ -148,7 +148,7 @@ const Cart = () => {
                                                     {/* Delete Button */}
                                                     <button
                                                         onClick={() => updateQuantity(item._id, item.size, 0)}
-                                                        className='p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-300'
+                                                        className='p-2 text-red-600 cursor-pointer hover:bg-red-50 rounded-lg transition-colors duration-300'
                                                         title='Remove from cart'
                                                     >
                                                         <Trash2 className='w-5 h-5' />
@@ -169,7 +169,7 @@ const Cart = () => {
                                 {/* Checkout Button */}
                                 <button
                                     onClick={() => navigate('/place-order')}
-                                    className='w-full mt-6 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2'
+                                    className='w-full mt-6 bg-gradient-to-r cursor-pointer from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2'
                                 >
                                     <span>Proceed to Checkout</span>
                                     <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
