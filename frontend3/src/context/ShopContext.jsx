@@ -164,24 +164,17 @@ const ShopContextProvider = (props) => {
 
     // This function is use to get user cart
     const getUserCart = async (userToken) => {
-        console.log("I am here");
         try {
-            console.log("I am here 1");
             // Sending request to get user cart
             const response = await axios.post(`${backendUrl}/api/cart/get`, {}, {headers: {token: userToken}});
             // Setting cart items
-            console.log('Response is here', response);
             if (response.data.success) {
                 // Setting cart items
-                console.log("I am here 2");
                 setCartItems(response.data.cartData);
             }else{
-                console.log("I am here else 2");
                 toast.error(response.data.message);
             }
-            console.log("I am here 4");
         } catch (error) {
-            console.log("I am here 5 catch block");
             console.log(error);
             toast.error(error.message);
         }
