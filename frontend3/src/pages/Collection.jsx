@@ -141,7 +141,7 @@ const Collection = () => {
                                     Categories
                                 </h4>
                                 <div className='space-y-3'>
-                                    {['Men', 'Women', 'Kids'].map((cat) => (
+                                    {['Men', 'Women'].map((cat) => (
                                         <label key={cat} className='flex items-center gap-3 cursor-pointer group'>
                                             <input
                                                 type='checkbox'
@@ -167,7 +167,7 @@ const Collection = () => {
                                     Type
                                 </h4>
                                 <div className='space-y-3'>
-                                    {['Topwear', 'Bottomwear', 'Winterwear'].map((type) => (
+                                    {['Woody', 'Floral', 'Oriental'].map((type) => (
                                         <label key={type} className='flex items-center gap-3 cursor-pointer group'>
                                             <input
                                                 type='checkbox'
@@ -219,7 +219,7 @@ const Collection = () => {
 
                         {/* Products Grid */}
                         {filterProducts.length > 0 ? (
-                            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6'>
+                            <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6'>
                                 {filterProducts.map((item, index) => (
                                     <div 
                                         key={item._id} 

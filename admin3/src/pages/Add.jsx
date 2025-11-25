@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { assets } from '../assets/assets';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Upload, Image as ImageIcon, Package, DollarSign, Tag, Star, Save } from 'lucide-react';
+import { Upload, Image as ImageIcon, Package, Tag, Star, Save, IndianRupee } from 'lucide-react';
 
 const Add = ({ token }) => {
     // image states
@@ -16,7 +16,7 @@ const Add = ({ token }) => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [category, setCategory] = useState('Men');
-    const [subCategory, setSubCategory] = useState('Topwear');
+    const [subCategory, setSubCategory] = useState('Woody');
     const [bestseller, setBestseller] = useState(false);
     const [sizes, setSizes] = useState([]);
 
@@ -51,7 +51,7 @@ const Add = ({ token }) => {
             setDescription('');
             setPrice('');
             setCategory('Men');
-            setSubCategory('Topwear');
+            setSubCategory('Woody');
             setBestseller(false);
             setSizes([]);
             setImage1(false);
@@ -204,7 +204,6 @@ const Add = ({ token }) => {
                                     >
                                         <option value="Men">Men</option>
                                         <option value="Women">Women</option>
-                                        <option value="Kids">Kids</option>
                                     </select>
                                 </div>
 
@@ -218,19 +217,19 @@ const Add = ({ token }) => {
                                         value={subCategory}
                                         onChange={(e) => setSubCategory(e.target.value)}
                                     >
-                                        <option value="Topwear">Topwear</option>
-                                        <option value="Bottomwear">Bottomwear</option>
-                                        <option value="Winterwear">Winterwear</option>
+                                        <option value="Woody">Woody</option>
+                                        <option value="Floral">Floral</option>
+                                        <option value="Oriental">Oriental</option>
                                     </select>
                                 </div>
 
                                 {/* Price */}
                                 <div>
                                     <label className='block font-body text-sm font-semibold text-gray-700 mb-2'>
-                                        Price ($) <span className='text-pink-600'>*</span>
+                                        Price <span className='text-pink-600'>*</span>
                                     </label>
                                     <div className='relative'>
-                                        <DollarSign className='absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400' />
+                                        <IndianRupee className='absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400' />
                                         <input
                                             className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all duration-300 font-body'
                                             type="number"
@@ -247,14 +246,14 @@ const Add = ({ token }) => {
 
                     {/* Sizes & Options Section */}
                     <div className='bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm'>
-                        <div className='flex items-center gap-2 mb-6'>
+                        {/* <div className='flex items-center gap-2 mb-6'>
                             <Package className='w-5 h-5 text-pink-600' />
                             <h2 className='font-body text-lg font-semibold text-gray-800'>Sizes & Options</h2>
-                        </div>
+                        </div> */}
 
                         <div className='space-y-6'>
                             {/* Product Sizes */}
-                            <div>
+                            {/* <div>
                                 <label className='block font-body text-sm font-semibold text-gray-700 mb-3'>
                                     Available Sizes
                                 </label>
@@ -275,7 +274,7 @@ const Add = ({ token }) => {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Bestseller Checkbox */}
                             <div className='flex items-center gap-3 p-4 bg-pink-50 rounded-lg border border-pink-200'>
@@ -298,14 +297,14 @@ const Add = ({ token }) => {
                     <div className='flex justify-end gap-4'>
                         <button
                             type='button'
-                            className='px-6 py-3 border-2 border-gray-300 text-gray-700 font-body font-medium rounded-lg hover:bg-gray-50 transition-all duration-300'
+                            className='px-6 cursor-pointer py-3 border-2 border-gray-300 text-gray-700 font-body font-medium rounded-lg hover:bg-gray-50 transition-all duration-300'
                             onClick={() => {
                                 // Reset form
                                 setName('');
                                 setDescription('');
                                 setPrice('');
                                 setCategory('Men');
-                                setSubCategory('Topwear');
+                                setSubCategory('Woody');
                                 setBestseller(false);
                                 setSizes([]);
                                 setImage1(false);
@@ -318,7 +317,7 @@ const Add = ({ token }) => {
                         </button>
                         <button
                             type='submit'
-                            className='flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105'
+                            className='cursor-pointer flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105'
                         >
                             <Save className='w-5 h-5' />
                             <span>Add Product</span>
