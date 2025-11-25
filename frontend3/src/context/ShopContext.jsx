@@ -69,7 +69,6 @@ const ShopContextProvider = (props) => {
     }
 
     // This function is use to get cart count
-    
     const getCartCount = () => {
         // Setting total count
         let totalCount = 0;
@@ -82,13 +81,11 @@ const ShopContextProvider = (props) => {
                     // Checking if item is in cart
                     if (cartItems[items][item] > 0) {
                         // Increasing total count
-                        // totalCount += cartItems[items][item];
                         totalCount += cartItems[items][item];
                     }
                 } catch (error) {
-                    toast.error("Something went wrong");
+                    console.error("Error counting cart items:", error);
                 }
-                
             }
         }
         return totalCount;
@@ -127,6 +124,10 @@ const ShopContextProvider = (props) => {
         for (const items in cartItems) {
             // Looping through size
             let itemInfo = products.find((item) => item._id === items);
+            
+            // Skip if product not found
+            if (!itemInfo) continue;
+            
             // Looping through quantity
             for (const item in cartItems[items]) {
                 try {
@@ -136,7 +137,7 @@ const ShopContextProvider = (props) => {
                         totalAmount += cartItems[items][item] * itemInfo.price;
                     }
                 } catch (error) {
-                    toast.error("Something went wrong");
+                    console.error("Error calculating cart amount:", error);
                 }
             }
         }

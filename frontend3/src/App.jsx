@@ -16,12 +16,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <>
       <div>
       <ToastContainer />
+      <ScrollToTop />
         <Navbar />
         <SearchBar />
 
