@@ -79,7 +79,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Slick Slider Arrow Customization (if needed in future) */
 .slick-prev,
 .slick-next {
-    z-index: 30;
+    display: none !important;
+    /* z-index: 30;
+    color: red !important;
+    background-color: red !important; */
 }
 
 .slick-prev {
