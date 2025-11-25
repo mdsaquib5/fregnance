@@ -144,7 +144,7 @@ const Navbar = () => {
                             {/* Search Icon */}
                             <button
                                 onClick={() => setShowSearch(true)}
-                                className='p-2 hover:bg-pink-50 rounded-full transition-colors duration-200 group'
+                                className='p-2 hover:bg-pink-50 rounded-full cursor-pointer transition-colors duration-200 group'
                                 aria-label='Search'
                             >
                                 <Search className="w-5 h-5 text-gray-700 group-hover:text-pink-600 group-hover:scale-110 transition-all" />
@@ -154,7 +154,7 @@ const Navbar = () => {
                             <div className='relative group'>
                                 <button
                                     onClick={() => token ? null : navigate('/login')}
-                                    className='p-2 hover:bg-pink-50 rounded-full transition-colors duration-200'
+                                    className='p-2 hover:bg-pink-50 rounded-full cursor-pointer transition-colors duration-200'
                                     aria-label='Account'
                                 >
                                     <User className="w-5 h-5 text-gray-700 group-hover:text-pink-600 group-hover:scale-110 transition-all" />
