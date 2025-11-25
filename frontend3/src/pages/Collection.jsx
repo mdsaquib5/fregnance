@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+import {ChartColumnStacked} from 'lucide-react';
 
 const Collection = () => {
     const { products, search, showSearch } = useContext(ShopContext);
     const [showFilters, setShowFilters] = useState(false);
     const [filterProducts, setFilterProducts] = useState([]);
     const [category, setCategory] = useState([]);
-    const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relavent');
 
     const toggleCategory = (e) => {
@@ -16,14 +16,6 @@ const Collection = () => {
             setCategory((prev) => prev.filter((item) => item !== e.target.value));
         } else {
             setCategory((prev) => [...prev, e.target.value]);
-        }
-    };
-
-    const toggleSubCategory = (e) => {
-        if (subCategory.includes(e.target.value)) {
-            setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
-        } else {
-            setSubCategory((prev) => [...prev, e.target.value]);
         }
     };
 
@@ -38,10 +30,6 @@ const Collection = () => {
 
         if (category.length > 0) {
             productsCopy = productsCopy.filter((item) => category.includes(item.category));
-        }
-
-        if (subCategory.length > 0) {
-            productsCopy = productsCopy.filter((item) => subCategory.includes(item.subCategory));
         }
 
         setFilterProducts(productsCopy);
@@ -64,13 +52,12 @@ const Collection = () => {
 
     const clearFilters = () => {
         setCategory([]);
-        setSubCategory([]);
         setSortType('relavent');
     };
 
     useEffect(() => {
         applyFilter();
-    }, [category, subCategory, search, showSearch, products]);
+    }, [category, search, showSearch, products]);
 
     useEffect(() => {
         sortProducts();
@@ -118,7 +105,7 @@ const Collection = () => {
                             <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-4 border-l-4 border-pink-500'>
                                 <div className='flex items-center justify-between mb-2'>
                                     <h3 className='font-heading text-lg font-bold text-gray-900'>Filters</h3>
-                                    {(category.length > 0 || subCategory.length > 0) && (
+                                    {category.length > 0 && (
                                         <button
                                             onClick={clearFilters}
                                             className='text-xs text-pink-600 hover:text-pink-700 font-semibold'
@@ -135,9 +122,7 @@ const Collection = () => {
                             {/* Categories Filter */}
                             <div className='bg-white rounded-xl p-6 shadow-md border border-gray-100'>
                                 <h4 className='font-heading text-base font-bold text-gray-900 mb-4 flex items-center gap-2'>
-                                    <svg className='w-5 h-5 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z' />
-                                    </svg>
+                                    <ChartColumnStacked className='w-5 h-5 text-pink-600' />
                                     Categories
                                 </h4>
                                 <div className='space-y-3'>
@@ -152,32 +137,6 @@ const Collection = () => {
                                             />
                                             <span className='font-body text-gray-700 group-hover:text-pink-600 transition-colors'>
                                                 {cat}
-                                            </span>
-                                        </label>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Type Filter */}
-                            <div className='bg-white rounded-xl p-6 shadow-md border border-gray-100'>
-                                <h4 className='font-heading text-base font-bold text-gray-900 mb-4 flex items-center gap-2'>
-                                    <svg className='w-5 h-5 text-pink-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10' />
-                                    </svg>
-                                    Type
-                                </h4>
-                                <div className='space-y-3'>
-                                    {['Woody', 'Floral', 'Oriental'].map((type) => (
-                                        <label key={type} className='flex items-center gap-3 cursor-pointer group'>
-                                            <input
-                                                type='checkbox'
-                                                value={type}
-                                                checked={subCategory.includes(type)}
-                                                onChange={toggleSubCategory}
-                                                className='w-5 h-5 text-pink-600 border-gray-300 rounded focus:ring-pink-500 cursor-pointer'
-                                            />
-                                            <span className='font-body text-gray-700 group-hover:text-pink-600 transition-colors'>
-                                                {type}
                                             </span>
                                         </label>
                                     ))}

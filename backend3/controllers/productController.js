@@ -13,7 +13,7 @@ const addProduct = async (req, res) => {
         }
 
         // Destructure the form data
-        const { name, description, price, category, subCategory, sizes, bestseller } = req.body;
+        const { name, description, price, category, sizes, bestseller } = req.body;
         
         // Validate required fields
         if (!name || !description || !price || !category) {
@@ -87,7 +87,6 @@ const addProduct = async (req, res) => {
                 description,
                 price,
                 category,
-                subCategory: subCategory || null,
                 sizes: sizes ? sizes.split(',').map(s => s.trim()) : [],
                 bestseller: bestseller === 'true',
                 images: successfulUploads
@@ -99,7 +98,6 @@ const addProduct = async (req, res) => {
             description,
             category,
             price: Number(price),
-            subCategory,
             bestseller: bestseller === 'true' ? true : false,
             sizes: JSON.parse(sizes),
             image: successfulUploads,
