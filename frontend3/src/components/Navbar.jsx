@@ -117,7 +117,7 @@ const Navbar = () => {
                             </li>
 
                             {/* Collection Mega Menu */}
-                           <NavLink
+                            <NavLink
                                 to={'/collection'}
                                 className={({ isActive }) => `py-2 uppercase transition-colors duration-200 hover:text-pink-600 ${isActive ? 'text-pink-600' : ''}`}
                             >

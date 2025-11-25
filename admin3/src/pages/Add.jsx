@@ -16,6 +16,7 @@ const Add = ({ token }) => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [category, setCategory] = useState('Men');
+    const [subCategory, setSubCategory] = useState('Woody');
     const [bestseller, setBestseller] = useState(false);
     const [sizes, setSizes] = useState([]);
 
@@ -28,6 +29,7 @@ const Add = ({ token }) => {
             formData.append('description', description);
             formData.append('price', price);
             formData.append('category', category);
+            formData.append('subCategory', subCategory);
             formData.append('bestseller', bestseller);
             formData.append('sizes', JSON.stringify(sizes));
 
@@ -49,6 +51,7 @@ const Add = ({ token }) => {
             setDescription('');
             setPrice('');
             setCategory('Men');
+            setSubCategory('Woody');
             setBestseller(false);
             setSizes([]);
             setImage1(false);
@@ -187,8 +190,8 @@ const Add = ({ token }) => {
                                 ></textarea>
                             </div>
 
-                            {/* Category and Price */}
-                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+                            {/* Category, Subcategory, Price */}
+                            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                                 {/* Category */}
                                 <div>
                                     <label className='block font-body text-sm font-semibold text-gray-700 mb-2'>
@@ -201,6 +204,22 @@ const Add = ({ token }) => {
                                     >
                                         <option value="Men">Men</option>
                                         <option value="Women">Women</option>
+                                    </select>
+                                </div>
+
+                                {/* Sub Category */}
+                                <div>
+                                    <label className='block font-body text-sm font-semibold text-gray-700 mb-2'>
+                                        Sub Category <span className='text-pink-600'>*</span>
+                                    </label>
+                                    <select
+                                        className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition-all duration-300 font-body bg-white'
+                                        value={subCategory}
+                                        onChange={(e) => setSubCategory(e.target.value)}
+                                    >
+                                        <option value="Woody">Woody</option>
+                                        <option value="Floral">Floral</option>
+                                        <option value="Oriental">Oriental</option>
                                     </select>
                                 </div>
 
@@ -234,12 +253,12 @@ const Add = ({ token }) => {
 
                         <div className='space-y-6'>
                             {/* Product Sizes */}
-                            {/* <div>
+                            <div>
                                 <label className='block font-body text-sm font-semibold text-gray-700 mb-3'>
                                     Available Sizes
                                 </label>
                                 <div className='flex flex-wrap gap-3'>
-                                    {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+                                    {['100ML', '200ML', '250ML'].map((size) => (
                                         <div
                                             key={size}
                                             onClick={() => setSizes(prev => prev.includes(size) ? prev.filter(item => item !== size) : [...prev, size])}
@@ -255,7 +274,7 @@ const Add = ({ token }) => {
                                         </div>
                                     ))}
                                 </div>
-                            </div> */}
+                            </div>
 
                             {/* Bestseller Checkbox */}
                             <div className='flex items-center gap-3 p-4 bg-pink-50 rounded-lg border border-pink-200'>
@@ -285,6 +304,7 @@ const Add = ({ token }) => {
                                 setDescription('');
                                 setPrice('');
                                 setCategory('Men');
+                                setSubCategory('Woody');
                                 setBestseller(false);
                                 setSizes([]);
                                 setImage1(false);

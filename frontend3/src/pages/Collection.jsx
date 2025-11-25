@@ -9,6 +9,7 @@ const Collection = () => {
     const [showFilters, setShowFilters] = useState(false);
     const [filterProducts, setFilterProducts] = useState([]);
     const [category, setCategory] = useState([]);
+    const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relavent');
 
     const toggleCategory = (e) => {
@@ -16,6 +17,14 @@ const Collection = () => {
             setCategory((prev) => prev.filter((item) => item !== e.target.value));
         } else {
             setCategory((prev) => [...prev, e.target.value]);
+        }
+    };
+
+    const toggleSubCategory = (e) => {
+        if (subCategory.includes(e.target.value)) {
+            setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
+        } else {
+            setSubCategory((prev) => [...prev, e.target.value]);
         }
     };
 
@@ -30,6 +39,10 @@ const Collection = () => {
 
         if (category.length > 0) {
             productsCopy = productsCopy.filter((item) => category.includes(item.category));
+        }
+
+        if (subCategory.length > 0) {
+            productsCopy = productsCopy.filter((item) => subCategory.includes(item.subCategory));
         }
 
         setFilterProducts(productsCopy);
@@ -52,12 +65,13 @@ const Collection = () => {
 
     const clearFilters = () => {
         setCategory([]);
+        setSubCategory([]);
         setSortType('relavent');
     };
 
     useEffect(() => {
         applyFilter();
-    }, [category, search, showSearch, products]);
+    }, [category, subCategory, search, showSearch, products]);
 
     useEffect(() => {
         sortProducts();
@@ -105,7 +119,7 @@ const Collection = () => {
                             <div className='bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-4 border-l-4 border-pink-500'>
                                 <div className='flex items-center justify-between mb-2'>
                                     <h3 className='font-heading text-lg font-bold text-gray-900'>Filters</h3>
-                                    {category.length > 0 && (
+                                    {(category.length > 0 || subCategory.length > 0) && (
                                         <button
                                             onClick={clearFilters}
                                             className='text-xs text-pink-600 hover:text-pink-700 font-semibold'
@@ -137,6 +151,30 @@ const Collection = () => {
                                             />
                                             <span className='font-body text-gray-700 group-hover:text-pink-600 transition-colors'>
                                                 {cat}
+                                            </span>
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* SubCategory Filter */}
+                            <div className='bg-white rounded-xl p-6 shadow-md border border-gray-100'>
+                                <h4 className='font-heading text-base font-bold text-gray-900 mb-4 flex items-center gap-2'>
+                                    <ChartColumnStacked className='w-5 h-5 text-pink-600' />
+                                    SubCategory
+                                </h4>
+                                <div className='space-y-3'>
+                                    {['Woody', 'Floral', 'Oriental'].map((subCat) => (
+                                        <label key={subCat} className='flex items-center gap-3 cursor-pointer group'>
+                                            <input
+                                                type='checkbox'
+                                                value={subCat}
+                                                checked={subCategory.includes(subCat)}
+                                                onChange={toggleSubCategory}
+                                                className='w-5 h-5 text-pink-600 border-gray-300 rounded focus:ring-pink-500 cursor-pointer'
+                                            />
+                                            <span className='font-body text-gray-700 group-hover:text-pink-600 transition-colors'>
+                                                {subCat}
                                             </span>
                                         </label>
                                     ))}

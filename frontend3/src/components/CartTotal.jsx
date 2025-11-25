@@ -3,8 +3,6 @@ import { ShopContext } from '../context/ShopContext';
 
 const CartTotal = () => {
     const { getCartAmount, currency, deliveryFee } = useContext(ShopContext);
-    const subtotal = getCartAmount();
-    const total = subtotal === 0 ? 0 : subtotal + deliveryFee;
 
     return (
         <div className='w-full bg-gradient-to-br from-gray-50 to-pink-50/30 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200'>
@@ -29,7 +27,7 @@ const CartTotal = () => {
                         <span className='font-body text-gray-700 text-sm sm:text-base'>Subtotal</span>
                     </div>
                     <span className='font-body font-semibold text-gray-900 text-base sm:text-lg'>
-                        {currency}{subtotal.toFixed(2)}
+                        {currency}{getCartAmount()}
                     </span>
                 </div>
 
@@ -42,7 +40,7 @@ const CartTotal = () => {
                         <span className='font-body text-gray-700 text-sm sm:text-base'>Shipping Fee</span>
                     </div>
                     <span className='font-body font-semibold text-gray-900 text-base sm:text-lg'>
-                        {currency}{deliveryFee.toFixed(2)}
+                        {currency}{deliveryFee}
                     </span>
                 </div>
 
@@ -58,13 +56,13 @@ const CartTotal = () => {
                         <span className='font-heading font-bold text-gray-900 text-lg sm:text-xl'>Total</span>
                     </div>
                     <span className='font-heading font-bold text-pink-600 text-xl sm:text-2xl'>
-                        {currency}{total.toFixed(2)}
+                        {currency}{getCartAmount() === 0 ? 0 : getCartAmount() + deliveryFee}
                     </span>
                 </div>
             </div>
 
             {/* Additional Info */}
-            {subtotal > 0 && (
+            {getCartAmount() > 0 && (
                 <div className='mt-6 pt-4 border-t border-gray-200'>
                     <div className='flex items-start gap-2 text-xs text-gray-600 font-body'>
                         <svg className='w-4 h-4 text-green-500 mt-0.5 flex-shrink-0' fill='currentColor' viewBox='0 0 20 20'>
@@ -78,7 +76,7 @@ const CartTotal = () => {
             )}
 
             {/* Empty Cart Message */}
-            {subtotal === 0 && (
+            {getCartAmount() === 0 && (
                 <div className='text-center py-4'>
                     <svg className='w-16 h-16 mx-auto text-gray-300 mb-3' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' />
