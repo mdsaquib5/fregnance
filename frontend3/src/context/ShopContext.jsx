@@ -170,6 +170,7 @@ const ShopContextProvider = (props) => {
             // Sending request to get user cart
             const response = await axios.post(`${backendUrl}/api/cart/get`, {}, {headers: {token: userToken}});
             // Setting cart items
+            console.log('Response is here', response);
             if (response.data.success) {
                 // Setting cart items
                 console.log("I am here 2");
