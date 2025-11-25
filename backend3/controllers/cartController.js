@@ -73,7 +73,7 @@ const getUserCart = async (req, res) => {
         return res.status(200).json({success: true, cartData});
     } catch (error) {
         console.log(error);
-        return res.status(500).json({success: false, message: error.message});
+        return res.status(500).json({success: false, message: "Frontend Issue"});
     }
 }
 
