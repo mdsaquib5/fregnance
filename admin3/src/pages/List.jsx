@@ -16,7 +16,7 @@ const List = ({ token }) => {
     const fetchList = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('http://localhost:4000/api/product/list');
+            const response = await axios.get(`${backendUrl}/api/product/list`);
             if (response.data.success) {
                 setList(response.data.products);
                 setFilteredList(response.data.products);
@@ -62,9 +62,9 @@ const List = ({ token }) => {
     const removeProduct = async () => {
         if (!productToDelete) return;
 
-        console.log("Remove product id", productToDelete._id);
+        // console.log("Remove product id", productToDelete._id);
         try {
-            const response = await axios.post(`http://localhost:4000/api/product/remove`, { headers: { token }, id: productToDelete._id });
+            const response = await axios.post(`${backendUrl}/api/product/remove`, { headers: { token }, id: productToDelete._id });
             if (response.data.success) {
                 toast.success('Product deleted successfully');
                 await fetchList();
