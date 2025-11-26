@@ -35,7 +35,7 @@ const Navbar = ({ setToken }) => {
                                 localStorage.removeItem('token');
                                 setToken('');
                             }}
-                            className='flex items-center gap-2 bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-medium px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg'
+                            className='flex items-center gap-2 cursor-pointer bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white font-body font-medium px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg'
                         >
                             <LogOut className='w-4 h-4' />
                             <span>Logout</span>
