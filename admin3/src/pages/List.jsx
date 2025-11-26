@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { Package, Search, Trash2, Edit, Eye, X } from 'lucide-react';
+import { Package, Search, Trash2, X } from 'lucide-react';
+import {backendUrl} from "../config/const";
 
 export const currency = "₹";
 

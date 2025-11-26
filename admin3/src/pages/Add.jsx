@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { assets } from '../assets/assets';
+import {backendUrl} from "../config/const";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Upload, Image as ImageIcon, Package, Tag, Star, Save, IndianRupee } from 'lucide-react';
