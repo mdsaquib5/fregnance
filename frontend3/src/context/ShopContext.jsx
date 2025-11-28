@@ -63,6 +63,7 @@ const ShopContextProvider = (props) => {
             } catch (error) {
                 console.log(error);
                 toast.error(error.message);
+                navigate('/login');
             }
         }
         toast.success("Item added to cart");
@@ -175,8 +176,8 @@ const ShopContextProvider = (props) => {
                 toast.error(response.data.message);
             }
         } catch (error) {
-            console.log("This will catch by saquib");
-            toast.error(error.message);
+            console.log(error);
+            toast.error("Session expired. Please login again to continue");
         }
     }
 
