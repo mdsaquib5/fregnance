@@ -175,7 +175,7 @@ const ShopContextProvider = (props) => {
                 toast.error(response.data.message);
             }
         } catch (error) {
-            console.log(error);
+            console.log("This will catch by saquib");
             toast.error(error.message);
         }
     }
